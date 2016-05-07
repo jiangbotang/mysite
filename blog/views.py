@@ -18,6 +18,7 @@ def post_list(request):
         posts = paginator.page(paginator.num_pages)
     return render(request, 'blog/post/list.html', {'posts': posts})
 
+
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post,
                              slug=post,
@@ -48,6 +49,7 @@ def post_detail(request, year, month, day, post):
                    'comments': comments,
                    'comment_form': comment_form,
                    'sent': sent})
+
 
 def post_share(request, post_id):
     # Retrieve post by id
