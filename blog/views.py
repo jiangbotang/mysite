@@ -4,6 +4,8 @@ from django.core.mail import send_mail
 from .models import Post, Comment
 from .forms import EmailPostForm, CommentForm
 
+from django.db.models import Count
+
 from taggit.models import Tag
 
 def post_list(request, tag_slug=None):
